@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Uv index{% endblock %}
+
+{% block body %}
+    <h1>Uv index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for uv in uvs %}
+            <tr>
+                <td>{{ uv.id }}</td>
+                <td>{{ uv.name }}</td>
+                <td>
+                    <a href="{{ path('uv_show', {'id': uv.id}) }}">show</a>
+                    <a href="{{ path('uv_edit', {'id': uv.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('uv_new') }}">Create new</a>
+{% endblock %}

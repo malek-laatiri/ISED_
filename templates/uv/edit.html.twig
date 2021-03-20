@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Uv{% endblock %}
+
+{% block body %}
+    <h1>Edit Uv</h1>
+
+    {{ include('uv/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('uv_index') }}">back to list</a>
+
+    {{ include('uv/_delete_form.html.twig') }}
+{% endblock %}
