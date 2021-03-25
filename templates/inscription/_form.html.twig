@@ -13,14 +13,14 @@
         {{ form_errors(form.semester) }}
     </div>
     {{ form_label(form.user) }}
-    {{ form_widget(form.user,{'attr': {'class': 'selectpicker'}}) }}
+    {{ form_widget(form.user,{'attr': {'class': 'lcslt lcslt-f-multiple lcslt-multiple','data-placeh':'What a nice placeholder'}}) }}
     <div class="form-error">
         {{ form_errors(form.user) }}
     </div>
     {{ form_label(form.uv) }}
-    <div onclick="showAlert();">
+    <div >
 
-        {{ form_widget(form.uv,{'attr': {'class': 'selectpicker'}}) }}
+        {{ form_widget(form.uv,{'attr': {'class': 'lcslt lcslt-f-multiple lcslt-multiple'}}) }}
     </div>
     <div class="form-error">
         {{ form_errors(form.uv) }}
@@ -30,9 +30,34 @@
     {{ form_end(form) }}
 </fieldset>
 
+<script src="{{ asset("dist/lc_select.js") }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    const select = document.querySelector('select[id=inscription_uv]');
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.selectpicker').selectpicker();
+
+    new lc_select('select[id="inscription_uv"]', {
+        wrap_width : '100%',
+        enable_search : false,
+        max_opts : 5,
+        on_change: 'showAlert()',
+        enable_search: true,
+
     });
+
+    function showAlert() {
+
+            console.log($('#inscription_uv option:selected').length);
+
+            if ($('#inscription_uv option:selected').length==4){
+                $('#inscription_uv').prop('disabled', 'disabled');
+                if (document.getElementById("inscription_uv").disabled) {
+                    alert("you have reached the max of UV");
+                }
+            }
+
+
+
+
+    }
 </script>
