@@ -1,34 +1,84 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}New Inscription{% endblock %}
+  {% block stylesheets %}
+      <style>
+          * {
 
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          }
+
+          fieldset {
+              margin: 2em 0;
+              padding: 1em 2em;
+              border: solid 1px #ccc;
+              border-radius: 6px;
+              min-width: 200px;
+          }
+
+          legend {
+              font-size: 1.25em;
+              padding: 0.25em;
+              color: #999;
+              width:inherit; /* Or auto */
+              padding:0 10px; /* To give a bit of padding on the left and right */
+              border-bottom:none;
+          }
+
+          label {
+              display: block;
+              margin-top: 1em;
+          }
+
+          input {
+              padding: .5em;
+              border: solid 1px #999;
+          }
+          .btn{
+              padding: .5em 1em;
+              border-radius: 6px;
+              background-color: #333;
+              color:#fff;
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size: .8em;
+          }
+      </style>
+  {% endblock %}
 {% block body %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 
-    <h1>Create new Inscription</h1>
 
-    {{ include('inscription/_form.html.twig') }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="{{ asset("dist/bootstrap-select.js") }}"></script>
+    <section class="justify-content-sm-center">
+        <div class="justify-content-sm-center">
+            <div class="card">
+                <div class="card-body">
 
+        {{ include('inscription/_form.html.twig') }}
+        </div>
+            </div>
+        </div>
+    </section>
     <a href="{{ path('inscription_index') }}">back to list</a>
     <script>
         $('select').selectpicker();
 
-        $('#inscription_uv').change(function() {
+        $('#inscription_uv').change(function () {
             console.log($('#inscription_uv option:selected').length);
 
-            if ($('#inscription_uv option:selected').length==5){
+            if ($('#inscription_uv option:selected').length == 5) {
                 $('#inscription_uv').prop('disabled', 'disabled');
 
             }
 
 
         });
+
         function showAlert() {
             if (document.getElementById("inscription_uv").disabled) {
                 alert("you have reached the max of UV");
             }
         }
-        </script>
+    </script>
 {% endblock %}

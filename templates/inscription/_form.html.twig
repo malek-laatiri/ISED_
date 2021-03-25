@@ -1,27 +1,38 @@
-{{ form_start(form) }}
-{{ form_label(form.year) }}
-    {{ form_widget(form.year) }}
-<div class="form-error">
-    {{ form_errors(form.year) }}
-</div>
-{{ form_label(form.semester) }}
-    {{ form_widget(form.semester) }}
-<div class="form-error">
-    {{ form_errors(form.semester) }}
-</div>
-{{ form_label(form.user) }}
-    {{ form_widget(form.user) }}
-<div class="form-error">
-    {{ form_errors(form.user,{'attr': {'class': 'selectpicker'}}) }}
-</div>
-{{ form_label(form.uv) }}
-<div onclick="showAlert();">
+<fieldset class="justify-content-sm-center">
+    <legend>Create new Inscription</legend>
 
-    {{ form_widget(form.uv) }}
-</div>
-<div class="form-error">
-    {{ form_errors(form.uv) }}
-</div>
+    {{ form_start(form) }}
+    {{ form_label(form.year) }}
+    {{ form_widget(form.year) }}
+    <div class="form-error">
+        {{ form_errors(form.year) }}
+    </div>
+    {{ form_label(form.semester) }}
+    {{ form_widget(form.semester) }}
+    <div class="form-error">
+        {{ form_errors(form.semester) }}
+    </div>
+    {{ form_label(form.user) }}
+    {{ form_widget(form.user,{'attr': {'class': 'selectpicker'}}) }}
+    <div class="form-error">
+        {{ form_errors(form.user) }}
+    </div>
+    {{ form_label(form.uv) }}
+    <div onclick="showAlert();">
+
+        {{ form_widget(form.uv,{'attr': {'class': 'selectpicker'}}) }}
+    </div>
+    <div class="form-error">
+        {{ form_errors(form.uv) }}
+    </div>
 
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+    {{ form_end(form) }}
+</fieldset>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.selectpicker').selectpicker();
+    });
+</script>
