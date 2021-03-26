@@ -75,42 +75,36 @@ class Admission
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="cin")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $cinFile;
 
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="bac")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $bacFile;
 
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="att_travail")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $att_travailFile;
 
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="att_titulaire")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $att_titulaireFile;
 
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="autorisation")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $autorisationFile;
 
     /**
      * @Vich\UploadableField(mapping="product_image", fileNameProperty="cv")
      * @var File
-     * @ORM\Column(type="string", length=255)
      */
     private $cvFile;
 

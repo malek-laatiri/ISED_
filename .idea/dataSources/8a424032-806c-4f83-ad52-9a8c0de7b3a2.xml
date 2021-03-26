@@ -1786,204 +1786,216 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="406" parent="263" name="IDX_EB4C4D4E75C9C554">
+    <column id="406" parent="263" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="407" parent="263" name="IDX_EB4C4D4E75C9C554">
       <ColNames>admission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="407" parent="263" name="PRIMARY">
+    <key id="408" parent="263" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="408" parent="263" name="FK_EB4C4D4E75C9C554">
+    <foreign-key id="409" parent="263" name="FK_EB4C4D4E75C9C554">
       <ColNames>admission_id</ColNames>
       <RefSchemaName>db_ised</RefSchemaName>
       <RefTableName>admission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="409" parent="264" name="id">
+    <column id="410" parent="264" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="264" name="user_id">
+    <column id="411" parent="264" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="264" name="year">
+    <column id="412" parent="264" name="year">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="264" name="semester">
+    <column id="413" parent="264" name="semester">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="413" parent="264" name="IDX_5E90F6D6A76ED395">
+    <index id="414" parent="264" name="IDX_5E90F6D6A76ED395">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="414" parent="264" name="PRIMARY">
+    <key id="415" parent="264" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="415" parent="264" name="FK_5E90F6D6A76ED395">
+    <foreign-key id="416" parent="264" name="FK_5E90F6D6A76ED395">
       <ColNames>user_id</ColNames>
       <RefSchemaName>db_ised</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="416" parent="265" name="inscription_id">
+    <column id="417" parent="265" name="inscription_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="265" name="uv_id">
+    <column id="418" parent="265" name="uv_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="418" parent="265" name="IDX_486275865DAC5993">
+    <index id="419" parent="265" name="IDX_486275865DAC5993">
       <ColNames>inscription_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="419" parent="265" name="IDX_4862758620447BC0">
+    <index id="420" parent="265" name="IDX_4862758620447BC0">
       <ColNames>uv_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="420" parent="265" name="PRIMARY">
+    <key id="421" parent="265" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>inscription_id
 uv_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="421" parent="265" name="FK_486275865DAC5993">
+    <foreign-key id="422" parent="265" name="FK_486275865DAC5993">
       <ColNames>inscription_id</ColNames>
       <RefSchemaName>db_ised</RefSchemaName>
       <RefTableName>inscription</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="422" parent="265" name="FK_4862758620447BC0">
+    <foreign-key id="423" parent="265" name="FK_4862758620447BC0">
       <ColNames>uv_id</ColNames>
       <RefSchemaName>db_ised</RefSchemaName>
       <RefTableName>uv</RefTableName>
       <RefColNames>id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="423" parent="266" name="id">
+    <column id="424" parent="266" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="424" parent="266" name="admission_id">
+    <column id="425" parent="266" name="admission_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="425" parent="266" name="IDX_C658D38D75C9C554">
+    <column id="426" parent="266" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="427" parent="266" name="IDX_C658D38D75C9C554">
       <ColNames>admission_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="426" parent="266" name="PRIMARY">
+    <key id="428" parent="266" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="427" parent="266" name="FK_C658D38D75C9C554">
+    <foreign-key id="429" parent="266" name="FK_C658D38D75C9C554">
       <ColNames>admission_id</ColNames>
       <RefSchemaName>db_ised</RefSchemaName>
       <RefTableName>admission</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="428" parent="267" name="id">
+    <column id="430" parent="267" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="429" parent="267" name="email">
+    <column id="431" parent="267" name="email">
       <Position>2</Position>
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="430" parent="267" name="roles">
+    <column id="432" parent="267" name="roles">
       <Position>3</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="267" name="password">
+    <column id="433" parent="267" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="267" name="firstname">
+    <column id="434" parent="267" name="firstname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="267" name="lastname">
+    <column id="435" parent="267" name="lastname">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="267" name="cin">
+    <column id="436" parent="267" name="cin">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="435" parent="267" name="is_verified">
+    <column id="437" parent="267" name="is_verified">
       <Position>8</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="436" parent="267" name="UNIQ_8D93D649E7927C74">
+    <index id="438" parent="267" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="437" parent="267" name="PRIMARY">
+    <key id="439" parent="267" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="438" parent="267" name="UNIQ_8D93D649E7927C74">
+    <key id="440" parent="267" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
-    <column id="439" parent="268" name="id">
+    <column id="441" parent="268" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="440" parent="268" name="name">
+    <column id="442" parent="268" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="441" parent="268" name="PRIMARY">
+    <key id="443" parent="268" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

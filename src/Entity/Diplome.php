@@ -21,7 +21,7 @@ class Diplome
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="diplomes")
+     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="diplomes",cascade={"persist,delete"})
      */
     private $admission;
 

@@ -31,11 +31,23 @@ class AdmissionController extends AbstractController
     public function new(Request $request): Response
     {
         $admission = new Admission();
+        $admission->setUser($this->get('security.token_storage')->getToken()->getUser());
         $form = $this->createForm(Admission1Type::class, $admission);
         $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+            foreach ($form->getData()->getDiplomes() as $dip){
+                $entityManager->persist($dip);
+
+                $admission->addDiplome($dip);
+            }
+            foreach ($form->getData()->getNotes() as $dip){
+                $entityManager->persist($dip);
+
+                $admission->addNote($dip);
+            }
+
             $entityManager->persist($admission);
             $entityManager->flush();
 

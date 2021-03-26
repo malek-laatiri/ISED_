@@ -1,12 +1,27 @@
 {{ form_start(form) }}
+    {{ form_label(form.demande_insc) }}
+
     {{ form_widget(form.demande_insc) }}
+    {{ form_label(form.cinFile) }}
+
     {{ form_widget(form.cinFile) }}
+    {{ form_label(form.bacFile) }}
+
     {{ form_widget(form.bacFile) }}
+    {{ form_label(form.att_travailFile) }}
+
     {{ form_widget(form.att_travailFile) }}
+    {{ form_label(form.att_titulaireFile) }}
+
     {{ form_widget(form.att_titulaireFile) }}
+    {{ form_label(form.autorisationFile) }}
+
     {{ form_widget(form.autorisationFile) }}
+    {{ form_label(form.cvFile) }}
+
     {{ form_widget(form.cvFile) }}
 
+    <label>notes</label>
 
 <ul id="email-fields-list"
     data-prototype="{{ form_widget(form.notes.vars.prototype)|e }}"
@@ -21,7 +36,9 @@
 </ul>
 <button type="button"
         class="add-another-collection-widget"
-        data-list-selector="#email-fields-list">Add another email</button>
+        data-list-selector="#email-fields-list">Add another email
+</button>
+<label>diplomes</label>
 
 <ul id="diplomes-fields-list"
     data-prototype="{{ form_widget(form.diplomes.vars.prototype)|e }}"
@@ -36,8 +53,9 @@
 </ul>
 <button type="button"
         class="add-another-collection"
-        data-list-selector="#diplomes-fields-list">Add another email</button>
+        data-list-selector="#diplomes-fields-list">Add another email
+</button>
 
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 <script src="{{ asset('dist/addTask.js') }}"></script>

@@ -27,6 +27,8 @@ class Admission1Type extends AbstractType
                 'allow_delete' => true,
                 'required' => false,
                 'by_reference' => false,
+                'label'=>false,
+
                 'disabled' => false,
             ])
             ->add('diplomes', CollectionType::class, [
@@ -34,6 +36,7 @@ class Admission1Type extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true,
                 'required' => false,
+                'label'=>false,
                 'by_reference' => false,
                 'disabled' => false,
             ])

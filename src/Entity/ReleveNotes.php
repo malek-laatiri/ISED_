@@ -21,7 +21,7 @@ class ReleveNotes
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="notes")
+     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="notes",cascade={"persist,delete"})
      */
     private $admission;
 
