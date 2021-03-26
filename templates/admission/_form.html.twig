@@ -1,4 +1,43 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_widget(form.demande_insc) }}
+    {{ form_widget(form.cinFile) }}
+    {{ form_widget(form.bacFile) }}
+    {{ form_widget(form.att_travailFile) }}
+    {{ form_widget(form.att_titulaireFile) }}
+    {{ form_widget(form.autorisationFile) }}
+    {{ form_widget(form.cvFile) }}
+
+
+<ul id="email-fields-list"
+    data-prototype="{{ form_widget(form.notes.vars.prototype)|e }}"
+    data-widget-tags="{{ '<li></li>'|e }}"
+    data-widget-counter="{{ form.notes|length }}">
+    {% for emailField in form.notes %}
+        <li>
+            {{ form_errors(emailField) }}
+            {{ form_widget(emailField) }}
+        </li>
+    {% endfor %}
+</ul>
+<button type="button"
+        class="add-another-collection-widget"
+        data-list-selector="#email-fields-list">Add another email</button>
+
+<ul id="diplomes-fields-list"
+    data-prototype="{{ form_widget(form.diplomes.vars.prototype)|e }}"
+    data-widget-tags="{{ '<li></li>'|e }}"
+    data-widget-counter="{{ form.diplomes|length }}">
+    {% for emailField in form.diplomes %}
+        <li>
+            {{ form_errors(emailField) }}
+            {{ form_widget(emailField) }}
+        </li>
+    {% endfor %}
+</ul>
+<button type="button"
+        class="add-another-collection"
+        data-list-selector="#diplomes-fields-list">Add another email</button>
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+<script src="{{ asset('dist/addTask.js') }}"></script>

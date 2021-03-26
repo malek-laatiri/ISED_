@@ -25,6 +25,17 @@ class Diplome
      */
     private $admission;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="name")
+     * @var File
+     */
+    private $file;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -38,6 +49,30 @@ class Diplome
     public function setAdmission(?Admission $admission): self
     {
         $this->admission = $admission;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile( $file)
+    {
+        $this->file = $file;
 
         return $this;
     }
