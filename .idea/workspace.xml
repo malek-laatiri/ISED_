@@ -4,11 +4,10 @@
     <list default="true" id="712fc2cf-de7c-46f2-ab43-b83d7816f490" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdmissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Admission.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Admission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Diplome.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Diplome.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/ReleveNotes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ReleveNotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Admission1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admission1Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admission/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admission/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/DiplomeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DiplomeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ReleveNotesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReleveNotesType.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,38 +62,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/ReleveNotesType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Admission.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="303">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
-                <element signature="e#30#69#0#PHP" expanded="true" />
+                <element signature="e#28#55#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/admission">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/AdmissionType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="23" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -102,29 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdmissionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/diplome">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Diplome.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="23" column="99" lean-forward="true" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="99" />
-              <folding>
-                <element signature="e#30#67#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -132,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/ReleveNotes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
+            <state relative-caret-position="171">
+              <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
               <folding>
                 <element signature="e#30#71#0#PHP" expanded="true" />
               </folding>
@@ -142,10 +93,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/DiplomeType.php">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Diplome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="399">
+              <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+              <folding>
+                <element signature="e#30#67#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Admission.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+              <folding>
+                <element signature="e#30#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/vich/uploader-bundle/src/Mapping/Annotation/UploadableField.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="83" column="39" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -189,16 +164,16 @@
         <option value="$PROJECT_DIR$/templates/inscription/new.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
         <option value="$PROJECT_DIR$/src/Form/AdmissionType.php" />
-        <option value="$PROJECT_DIR$/src/Form/DiplomeType.php" />
-        <option value="$PROJECT_DIR$/src/Form/ReleveNotesType.php" />
         <option value="$PROJECT_DIR$/public/dist/addUser.js" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/admission/new.html.twig" />
         <option value="$PROJECT_DIR$/public/dist/addTask.js" />
         <option value="$PROJECT_DIR$/src/Form/Admission1Type.php" />
         <option value="$PROJECT_DIR$/templates/admission/_form.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/AdmissionController.php" />
+        <option value="$PROJECT_DIR$/src/Form/DiplomeType.php" />
+        <option value="$PROJECT_DIR$/src/Form/ReleveNotesType.php" />
         <option value="$PROJECT_DIR$/src/Entity/Admission.php" />
+        <option value="$PROJECT_DIR$/src/Controller/AdmissionController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Diplome.php" />
         <option value="$PROJECT_DIR$/src/Entity/ReleveNotes.php" />
       </list>
@@ -336,36 +311,13 @@
             <path>
               <item name="ised" type="b2602c69:ProjectViewProjectNode" />
               <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ised" type="b2602c69:ProjectViewProjectNode" />
               <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ised" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ised" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ised" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ised" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ised" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ised" type="b2602c69:ProjectViewProjectNode" />
@@ -426,18 +378,18 @@
       <workItem from="1616266278714" duration="9246000" />
       <workItem from="1616425133370" duration="590000" />
       <workItem from="1616534891495" duration="18643000" />
-      <workItem from="1616777248769" duration="11006000" />
+      <workItem from="1616777248769" duration="12482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41141000" />
+    <option name="totallyTimeSpent" value="42617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="-2" width="1533" height="902" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27236044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17955615" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inscription/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -654,69 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Admission1Type.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#28#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/releve_notes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/InscriptionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="33" column="89" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdmissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/DiplomeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/InscriptionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/AdmissionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="23" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ReleveNotesType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/diplome">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -727,20 +613,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/releve_notes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8a424032-806c-4f83-ad52-9a8c0de7b3a2/schema/db_ised/table/diplome">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/AdmissionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/InscriptionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/ReleveNotesType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="e#28#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/DiplomeType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Admission1Type.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#28#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/vich/uploader-bundle/src/Mapping/Annotation/UploadableField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="83" column="39" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Admission.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="88">
+          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
           <folding>
             <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdmissionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Diplome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="23" column="99" lean-forward="true" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="99" />
+        <state relative-caret-position="399">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding>
             <element signature="e#30#67#0#PHP" expanded="true" />
           </folding>
@@ -749,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/ReleveNotes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="23" column="96" selection-start-line="23" selection-start-column="96" selection-end-line="23" selection-end-column="96" />
+        <state relative-caret-position="171">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
           <folding>
             <element signature="e#30#71#0#PHP" expanded="true" />
           </folding>

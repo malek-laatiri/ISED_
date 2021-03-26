@@ -21,7 +21,7 @@ class ReleveNotes
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="notes",cascade={"persist,delete"})
+     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="notes",cascade={"persist","remove"})
      */
     private $admission;
 
@@ -31,7 +31,7 @@ class ReleveNotes
     private $name;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="name")
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="name")
      * @var File
      */
     private $file;
@@ -70,7 +70,7 @@ class ReleveNotes
         return $this->file;
     }
 
-    public function setFile(string $file)
+    public function setFile($file)
     {
         $this->file = $file;
 

@@ -21,7 +21,7 @@ class Diplome
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="diplomes",cascade={"persist,delete"})
+     * @ORM\ManyToOne(targetEntity=Admission::class, inversedBy="diplomes",cascade={"persist","remove"})
      */
     private $admission;
 
@@ -31,7 +31,7 @@ class Diplome
     private $name;
 
     /**
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="name")
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="name")
      * @var File
      */
     private $file;

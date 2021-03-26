@@ -13,7 +13,7 @@ class DiplomeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name',VichFileType::class)
+            ->add('file',VichFileType::class)
         ;
     }
 
@@ -21,6 +21,7 @@ class DiplomeType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Diplome::class,
+            "allow_extra_fields" => true,
         ]);
     }
 }

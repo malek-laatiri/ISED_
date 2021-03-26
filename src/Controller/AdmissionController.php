@@ -43,6 +43,8 @@ class AdmissionController extends AbstractController
                 $admission->addDiplome($dip);
             }
             foreach ($form->getData()->getNotes() as $dip){
+
+
                 $entityManager->persist($dip);
 
                 $admission->addNote($dip);
