@@ -64,9 +64,15 @@ class User implements UserInterface
      */
     private $inscriptions;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Admission::class, mappedBy="user")
+     */
+    private $admission;
+
     public function __construct()
     {
         $this->inscriptions = new ArrayCollection();
+        $this->admission = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -231,6 +237,36 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->email;
+    }
+
+    /**
+     * @return Collection|Admission[]
+     */
+    public function getAdmission(): Collection
+    {
+        return $this->admission;
+    }
+
+    public function addAdmission(Admission $admission): self
+    {
+        if (!$this->admission->contains($admission)) {
+            $this->admission[] = $admission;
+            $admission->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdmission(Admission $admission): self
+    {
+        if ($this->admission->removeElement($admission)) {
+            // set the owning side to null (unless already changed)
+            if ($admission->getUser() === $this) {
+                $admission->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
 

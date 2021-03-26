@@ -29,3 +29,13 @@ X
 (src/Controller/InscriptionController.php,0/b/0bd5b7b8387963016c980c2fde143972fe787f0d
 S
 #templates/inscription/new.html.twig,6/b/6b1e7e29d279d7e18be150ae7f0e05ad1756f928
+P
+ public/dist/bootstrap-select.css,b/d/bdbeca9db38f9187bb67d0f1ec1467cf5066804f
+O
+public/dist/bootstrap-select.js,e/6/e607f51ece092562fdb0eb0ef32dffda913d8607
+O
+src/Controller/UvController.php,4/c/4c26729e2edf2eb4ccc70cd724d070d843ee2fdc
+E
+public/dist/light.css,8/2/825f9bffd037fb8086ee25b8b67837a265d2bb7c
+H
+public/dist/lc_select.js,c/2/c2f04f631d7e4cc43a5797eed946fb9b710d0f4a

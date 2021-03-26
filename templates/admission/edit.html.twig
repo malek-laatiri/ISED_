@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Admission{% endblock %}
+
+{% block body %}
+    <h1>Edit Admission</h1>
+
+    {{ include('admission/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admission_index') }}">back to list</a>
+
+    {{ include('admission/_delete_form.html.twig') }}
+{% endblock %}
