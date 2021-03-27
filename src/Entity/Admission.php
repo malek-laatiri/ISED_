@@ -113,6 +113,11 @@ class Admission
      */
     private $accepted;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $refused;
+
     public function __construct()
     {
         $this->accepted=false;
@@ -361,6 +366,18 @@ class Admission
     public function setAccepted(bool $accepted): self
     {
         $this->accepted = $accepted;
+
+        return $this;
+    }
+
+    public function getRefused(): ?bool
+    {
+        return $this->refused;
+    }
+
+    public function setRefused(bool $refused): self
+    {
+        $this->refused = $refused;
 
         return $this;
     }

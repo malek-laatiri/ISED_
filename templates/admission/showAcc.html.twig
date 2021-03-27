@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admission{% endblock %}
+
+{% block body %}
+    <h1>Admission</h1>
+    {{ form_start(form) }}
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>User</th>
+            <td>    {{ form_widget(form.user) }}
+                {{ admission.user }}</td>
+        </tr>
+            <tr>
+                <th>Demande_insc</th>
+                <td>    {{ form_widget(form.demande_insc) }}
+                    {{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>    {{ form_widget(form.cin) }}
+                    {{ admission.cin }}</td>
+            </tr>
+            <tr>
+                <th>Bac</th>
+                <td>    {{ form_widget(form.bac) }}
+                    {{ admission.bac }}</td>
+            </tr>
+            <tr>
+                <th>Att_travail</th>
+                <td>    {{ form_widget(form.attTravail) }}
+                    {{ admission.attTravail }}</td>
+            </tr>
+            <tr>
+                <th>Att_titulaire</th>
+                <td>    {{ form_widget(form.att_titulaire) }}
+                    {{ admission.attTitulaire }}</td>
+            </tr>
+            <tr>
+                <th>Autorisation</th>
+                <td>    {{ form_widget(form.autorisation) }}
+                    {{ admission.autorisation }}</td>
+            </tr>
+            <tr>
+                <th>Cv</th>
+                <td>    {{ form_widget(form.cv) }}
+                    {{ admission.cv }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    {{ form_end(form) }}
+
+    <a href="{{ path('admission_index') }}">back to list</a>
+
+    <a href="{{ path('admission_edit', {'id': admission.id}) }}">edit</a>
+
+    {{ include('admission/_delete_form.html.twig') }}
+{% endblock %}

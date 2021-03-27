@@ -6,6 +6,10 @@ use App\Entity\Admission;
 use App\Form\Admission1Type;
 use App\Repository\AdmissionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,11 +33,36 @@ class AdmissionController extends AbstractController
      */
     public function toAccept(AdmissionRepository $admissionRepository): Response
     {
-        return $this->render('admission/index.html.twig', [
+
+
+        return $this->render('admission/indexAcc.html.twig', [
             'admissions' => $admissionRepository->findBy(["accepted"=>false]),
         ]);
     }
+    /**
+     * @Route("/toaccept/{id}", name="admission_show_accept", methods={"GET"})
+     */
+    public function showtoAccept(Admission $admission): Response
+    {
+        $form = $this->createFormBuilder()
+            ->add('demande_insc',CheckboxType::class)
+            ->add('cin', CheckboxType::class)
+            ->add('bac', CheckboxType::class)
+            ->add('attTravail', CheckboxType::class)
+            ->add('att_titulaire', CheckboxType::class)
+            ->add('autorisation', CheckboxType::class)
+            ->add('cv', CheckboxType::class)
+            ->add('notes', CheckboxType::class)
+            ->add('diplomes', CheckboxType::class)
+            ->add('user',CheckboxType::class)
+            ->add('description',TextareaType::class)
 
+            ->add('save', SubmitType::class, ['label' => 'Submit'])
+            ->getForm();
+        return $this->render('admission/showAcc.html.twig', [
+            'admission' => $admission, 'form' => $form->createView(),
+        ]);
+    }
     /**
      * @Route("/new", name="admission_new", methods={"GET","POST"})
      */
@@ -76,8 +105,21 @@ class AdmissionController extends AbstractController
      */
     public function show(Admission $admission): Response
     {
+        $form = $this->createFormBuilder()
+            ->add('demande_insc',CheckboxType::class)
+            ->add('cinFile', CheckboxType::class)
+            ->add('bacFile', CheckboxType::class)
+            ->add('att_travailFile', CheckboxType::class)
+            ->add('att_titulaireFile', CheckboxType::class)
+            ->add('autorisationFile', CheckboxType::class)
+            ->add('cvFile', CheckboxType::class)
+            ->add('notes', CheckboxType::class)
+            ->add('diplomes', CheckboxType::class)
+            ->add('user',CheckboxType::class)
+            ->add('save', SubmitType::class, ['label' => 'Submit'])
+            ->getForm();
         return $this->render('admission/show.html.twig', [
-            'admission' => $admission,
+            'admission' => $admission, 'form' => $form->createView(),
         ]);
     }
 
