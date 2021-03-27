@@ -108,8 +108,14 @@ class Admission
      */
     private $cvFile;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $accepted;
+
     public function __construct()
     {
+        $this->accepted=false;
         $this->diplomes = new ArrayCollection();
         $this->notes = new ArrayCollection();
     }
@@ -343,6 +349,18 @@ class Admission
     public function setCvFile($cvFile)
     {
         $this->cvFile = $cvFile;
+
+        return $this;
+    }
+
+    public function getAccepted(): ?bool
+    {
+        return $this->accepted;
+    }
+
+    public function setAccepted(bool $accepted): self
+    {
+        $this->accepted = $accepted;
 
         return $this;
     }

@@ -24,6 +24,15 @@ class AdmissionController extends AbstractController
             'admissions' => $admissionRepository->findAll(),
         ]);
     }
+    /**
+     * @Route("/admission_to_accept", name="admission_to_accept", methods={"GET"})
+     */
+    public function toAccept(AdmissionRepository $admissionRepository): Response
+    {
+        return $this->render('admission/index.html.twig', [
+            'admissions' => $admissionRepository->findBy(["accepted"=>false]),
+        ]);
+    }
 
     /**
      * @Route("/new", name="admission_new", methods={"GET","POST"})

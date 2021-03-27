@@ -16,12 +16,6 @@
                 <th>Att_titulaire</th>
                 <th>Autorisation</th>
                 <th>Cv</th>
-                <th>CinFile</th>
-                <th>BacFile</th>
-                <th>Att_travailFile</th>
-                <th>Att_titulaireFile</th>
-                <th>AutorisationFile</th>
-                <th>CvFile</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -30,18 +24,20 @@
             <tr>
                 <td>{{ admission.id }}</td>
                 <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
-                <td>{{ admission.cin }}</td>
-                <td>{{ admission.bac }}</td>
-                <td>{{ admission.attTravail }}</td>
-                <td>{{ admission.attTitulaire }}</td>
-                <td>{{ admission.autorisation }}</td>
-                <td>{{ admission.cv }}</td>
-                <td>{{ admission.cinFile }}</td>
-                <td>{{ admission.bacFile }}</td>
-                <td>{{ admission.attTravailFile }}</td>
-                <td>{{ admission.attTitulaireFile }}</td>
-                <td>{{ admission.autorisationFile }}</td>
-                <td>{{ admission.cvFile }}</td>
+                <td><embed src="/uploads/{{ admission.cin }}" width="500" height="375"
+                           type="application/pdf"></td>
+                <td><embed src="/uploads/{{ admission.bac }}" width="500" height="375"
+                           type="application/pdf"></td>
+                <td><embed src="/uploads/{{ admission.attTravail }}" width="500" height="375"
+                           type="application/pdf"></td>
+                <td><embed src="/uploads/{{ admission.attTitulaire }}" width="500" height="375"
+                           type="application/pdf"></td>
+                <td><embed src="/uploads/{{ admission.autorisation }}" width="500" height="375"
+                           type="application/pdf"></td>
+                <td><embed src="/uploads/{{ admission.cv }}" width="500" height="375"
+                           type="application/pdf"></td>
+
+
                 <td>
                     <a href="{{ path('admission_show', {'id': admission.id}) }}">show</a>
                     <a href="{{ path('admission_edit', {'id': admission.id}) }}">edit</a>
