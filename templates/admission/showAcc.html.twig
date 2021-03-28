@@ -4,59 +4,82 @@
 
 {% block body %}
     <h1>Admission</h1>
-    {{ form_start(form) }}
+    <div class="scrollable">
+        <table>
+            {{ form_start(form) }}
 
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>User</th>
-            <td>    {{ form_widget(form.user) }}
-                {{ admission.user }}</td>
-        </tr>
+            <thead></thead>
+            <tbody>
             <tr>
-                <th>Demande_insc</th>
-                <td>    {{ form_widget(form.demande_insc) }}
-                    {{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
+                <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
+                <td> {{ form_row(form.demande_insc) }}</td>
             </tr>
             <tr>
-                <th>Cin</th>
-                <td>    {{ form_widget(form.cin) }}
-                    {{ admission.cin }}</td>
+                <td> <embed src="/uploads/{{ admission.cin }}" width="500" height="375" type="application/pdf"></td>
+                <td>{{ form_row(form.cin ) }}</td>
             </tr>
             <tr>
-                <th>Bac</th>
-                <td>    {{ form_widget(form.bac) }}
-                    {{ admission.bac }}</td>
+                <td>                <embed src="/uploads/{{ admission.bac }}" width="500" height="375" type="application/pdf">
+                </td>
+                <td>{{ form_row(form.bac ) }}</td>
             </tr>
             <tr>
-                <th>Att_travail</th>
-                <td>    {{ form_widget(form.attTravail) }}
-                    {{ admission.attTravail }}</td>
+                <td>                <embed src="/uploads/{{ admission.attTravail }}" width="500" height="375" type="application/pdf">
+                </td>
+                <td>{{ form_row(form.attTravail ) }}</td>
             </tr>
             <tr>
-                <th>Att_titulaire</th>
-                <td>    {{ form_widget(form.att_titulaire) }}
-                    {{ admission.attTitulaire }}</td>
+                <td>                <embed src="/uploads/{{ admission.attTitulaire }}" width="500" height="375" type="application/pdf">
+                </td>
+                <td>{{ form_row(form.att_titulaire ) }}</td>
             </tr>
             <tr>
-                <th>Autorisation</th>
-                <td>    {{ form_widget(form.autorisation) }}
-                    {{ admission.autorisation }}</td>
+                <td>                <embed src="/uploads/{{ admission.autorisation }}" width="500" height="375" type="application/pdf">
+                </td>
+                <td>{{ form_row(form.autorisation ) }}</td>
             </tr>
             <tr>
-                <th>Cv</th>
-                <td>    {{ form_widget(form.cv) }}
-                    {{ admission.cv }}</td>
+                <td>                <embed src="/uploads/{{ admission.cv }}" width="500" height="375" type="application/pdf">
+                </td>
+                <td>{{ form_row(form.cv ) }}</td>
             </tr>
+            <tr>
+                <td>
+                {% for note in admission.notes %}
+                    <embed src="/uploads/{{ note.name }}" width="500" height="375" type="application/pdf">
+                {% endfor %}
+                </td>
+                <td>{{ form_row(form.notes ) }}</td>
 
-        </tbody>
-    </table>
+            </tr>
+            <tr>
+                <td>
+                {% for note in admission.diplomes %}
+                   <embed src="/uploads/{{ note.name }}" width="500" height="375" type="application/pdf">
+                {% endfor %}
+                </td>
+                <td>{{ form_row(form.diplomes ) }}</td>
 
+            </tr>
+            <tr>
+
+
+            </tr>
+            </tbody>
+        </table>
+        <div class="comment">
+            <td>{{ form_row(form.comment ) }}</td>
+
+        </div>
+    </div>
+    <br>
+    <div>
+        {{ form_row(form.save ) }}
+
+    </div>
     {{ form_end(form) }}
 
-    <a href="{{ path('admission_index') }}">back to list</a>
+    <a href="{{ path('admission_to_accept') }}">back to list</a>
 
-    <a href="{{ path('admission_edit', {'id': admission.id}) }}">edit</a>
 
-    {{ include('admission/_delete_form.html.twig') }}
 {% endblock %}

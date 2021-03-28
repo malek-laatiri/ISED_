@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -28,6 +27,7 @@ class AdmissionController extends AbstractController
             'admissions' => $admissionRepository->findAll(),
         ]);
     }
+
     /**
      * @Route("/admission_to_accept", name="admission_to_accept", methods={"GET"})
      */
@@ -36,16 +36,17 @@ class AdmissionController extends AbstractController
 
 
         return $this->render('admission/indexAcc.html.twig', [
-            'admissions' => $admissionRepository->findBy(["accepted"=>false]),
+            'admissions' => $admissionRepository->findBy(["accepted" => false]),
         ]);
     }
+
     /**
      * @Route("/toaccept/{id}", name="admission_show_accept", methods={"GET"})
      */
     public function showtoAccept(Admission $admission): Response
     {
         $form = $this->createFormBuilder()
-            ->add('demande_insc',CheckboxType::class)
+            ->add('demande_insc', CheckboxType::class)
             ->add('cin', CheckboxType::class)
             ->add('bac', CheckboxType::class)
             ->add('attTravail', CheckboxType::class)
@@ -54,15 +55,28 @@ class AdmissionController extends AbstractController
             ->add('cv', CheckboxType::class)
             ->add('notes', CheckboxType::class)
             ->add('diplomes', CheckboxType::class)
-            ->add('user',CheckboxType::class)
-            ->add('description',TextareaType::class)
-
-            ->add('save', SubmitType::class, ['label' => 'Submit'])
+           // ->add('user', CheckboxType::class)
+            ->add('comment', TextareaType::class, [
+                "attr" => ["cols" => 60, 'id' => "form_comment",
+                    "rows" => 10]
+            ])
+            ->add('save', SubmitType::class, ['label' => 'Refuse','attr'=>['class'=>'submit']])
             ->getForm();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $entityManager->persist($admission);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admission_to_accept');
+        }
         return $this->render('admission/showAcc.html.twig', [
             'admission' => $admission, 'form' => $form->createView(),
         ]);
     }
+
     /**
      * @Route("/new", name="admission_new", methods={"GET","POST"})
      */
@@ -75,12 +89,12 @@ class AdmissionController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
 
         if ($form->isSubmitted() && $form->isValid()) {
-            foreach ($form->getData()->getDiplomes() as $dip){
+            foreach ($form->getData()->getDiplomes() as $dip) {
                 $entityManager->persist($dip);
 
                 $admission->addDiplome($dip);
             }
-            foreach ($form->getData()->getNotes() as $dip){
+            foreach ($form->getData()->getNotes() as $dip) {
 
 
                 $entityManager->persist($dip);
@@ -106,7 +120,7 @@ class AdmissionController extends AbstractController
     public function show(Admission $admission): Response
     {
         $form = $this->createFormBuilder()
-            ->add('demande_insc',CheckboxType::class)
+            ->add('demande_insc', CheckboxType::class)
             ->add('cinFile', CheckboxType::class)
             ->add('bacFile', CheckboxType::class)
             ->add('att_travailFile', CheckboxType::class)
@@ -115,7 +129,7 @@ class AdmissionController extends AbstractController
             ->add('cvFile', CheckboxType::class)
             ->add('notes', CheckboxType::class)
             ->add('diplomes', CheckboxType::class)
-            ->add('user',CheckboxType::class)
+            ->add('user', CheckboxType::class)
             ->add('save', SubmitType::class, ['label' => 'Submit'])
             ->getForm();
         return $this->render('admission/show.html.twig', [
@@ -148,7 +162,7 @@ class AdmissionController extends AbstractController
      */
     public function delete(Request $request, Admission $admission): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$admission->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $admission->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($admission);
             $entityManager->flush();
