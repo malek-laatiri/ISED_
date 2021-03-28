@@ -7,40 +7,18 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Demande_insc</th>
-                <th>Cin</th>
-                <th>Bac</th>
-                <th>Att_travail</th>
-                <th>Att_titulaire</th>
-                <th>Autorisation</th>
-                <th>Cv</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>User email</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for admission in admissions %}
             <tr>
-                <td>{{ admission.id }}</td>
-                <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
-                <td><embed src="/uploads/{{ admission.cin }}" width="500" height="375"
-                           type="application/pdf"></td>
-                <td><embed src="/uploads/{{ admission.bac }}" width="500" height="375"
-                           type="application/pdf"></td>
-                <td><embed src="/uploads/{{ admission.attTravail }}" width="500" height="375"
-                           type="application/pdf"></td>
-                <td><embed src="/uploads/{{ admission.attTitulaire }}" width="500" height="375"
-                           type="application/pdf"></td>
-                <td><embed src="/uploads/{{ admission.autorisation }}" width="500" height="375"
-                           type="application/pdf"></td>
-                <td><embed src="/uploads/{{ admission.cv }}" width="500" height="375"
-                           type="application/pdf"></td>
-
+                <td>{{ admission.user.email}}</td>
 
                 <td>
                     <a href="{{ path('admission_show', {'id': admission.id}) }}">show</a>
-                    <a href="{{ path('admission_edit', {'id': admission.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

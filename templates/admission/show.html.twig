@@ -7,39 +7,59 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ admission.id }}</td>
-            </tr>
-            <tr>
-                <th>Demande_insc</th>
-                <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Cin</th>
-                <td>{{ admission.cin }}</td>
-            </tr>
-            <tr>
-                <th>Bac</th>
-                <td>{{ admission.bac }}</td>
-            </tr>
-            <tr>
-                <th>Att_travail</th>
-                <td>{{ admission.attTravail }}</td>
-            </tr>
-            <tr>
-                <th>Att_titulaire</th>
-                <td>{{ admission.attTitulaire }}</td>
-            </tr>
-            <tr>
-                <th>Autorisation</th>
-                <td>{{ admission.autorisation }}</td>
-            </tr>
-            <tr>
-                <th>Cv</th>
-                <td>{{ admission.cv }}</td>
-            </tr>
 
+        <tr>
+            <th>Demande_insc</th>
+            <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
+        </tr>
+        <tr>
+            <th>Cin</th>
+            <td>
+                <embed src="/uploads/{{ admission.cin }}" width="800" height="200" type="application/pdf">
+            </td>
+        </tr>
+        <tr>
+            <th>Bac</th>
+            <td>
+                <embed src="/uploads/{{ admission.bac }}" width="800" height="200" type="application/pdf">
+            </td>
+        </tr>
+        <tr>
+            <th>Att_travail</th>
+            <td>
+                <embed src="/uploads/{{ admission.attTravail }}" width="800" height="200" type="application/pdf">
+        </tr>
+        <tr>
+            <th>Att_titulaire</th>
+            <td><embed src="/uploads/{{ admission.attTitulaire }}" width="800" height="200" type="application/pdf">
+            </td>
+        </tr>
+        <tr>
+            <th>Autorisation</th>
+            <td><embed src="/uploads/{{ admission.autorisation }}" width="800" height="200" type="application/pdf">
+            </td>            </tr>
+        <tr>
+            <th>Cv</th>
+            <td>
+                <embed src="/uploads/{{ admission.cv }}" width="800" height="200" type="application/pdf">
+            </td>
+        </tr>
+        <tr>
+            <th>notes</th>
+            <td>
+                {% for note in admission.notes %}
+                    <embed src="/uploads/{{ note.name }}" width="800" height="200" type="application/pdf">
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>Diplomes</th>
+            <td>
+                {% for note in admission.diplomes %}
+                    <embed src="/uploads/{{ note.name }}" width="800" height="200" type="application/pdf">
+                {% endfor %}
+            </td>
+        </tr>
         </tbody>
     </table>
 

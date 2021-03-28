@@ -26,7 +26,7 @@ class AdmissionController extends AbstractController
     public function index(AdmissionRepository $admissionRepository): Response
     {
         return $this->render('admission/index.html.twig', [
-            'admissions' => $admissionRepository->findBy(["user"=>$this->get('security.token_storage')->getToken()->getUser()]),
+            'admissions' => $admissionRepository->findBy(["user" => $this->get('security.token_storage')->getToken()->getUser()]),
         ]);
     }
 
@@ -59,12 +59,12 @@ class AdmissionController extends AbstractController
             ->add('cv', CheckboxType::class)
             ->add('notes', CheckboxType::class)
             ->add('diplomes', CheckboxType::class)
-           // ->add('user', CheckboxType::class)
+            // ->add('user', CheckboxType::class)
             ->add('comment', TextareaType::class, [
                 "attr" => ["cols" => 60, 'id' => "form_comment",
                     "rows" => 10]
             ])
-            ->add('save', SubmitType::class, ['label' => 'Refuse','attr'=>['class'=>'submit']])
+            ->add('save', SubmitType::class, ['label' => 'Refuse', 'attr' => ['class' => 'submit']])
             ->getForm();
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -79,6 +79,21 @@ class AdmissionController extends AbstractController
         return $this->render('admission/showAcc.html.twig', [
             'admission' => $admission, 'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/acceptadmission/{id}", name="admission_accept", methods={"GET"})
+     * @IsGranted("ROLE_SECRETAIRE")
+     */
+    public function acceptAdmission(Admission $admission)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $admission->setAccepted(true);
+        $entityManager->persist($admission);
+        $entityManager->flush();
+        return $this->redirectToRoute('admission_to_accept');
+
+
     }
 
     /**

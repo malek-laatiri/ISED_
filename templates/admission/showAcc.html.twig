@@ -4,82 +4,101 @@
 
 {% block body %}
     <h1>Admission</h1>
-    <div class="scrollable">
-        <table>
-            {{ form_start(form) }}
+    {{ form_start(form) }}
 
-            <thead></thead>
-            <tbody>
-            <tr>
-                <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
-                <td> {{ form_row(form.demande_insc) }}</td>
-            </tr>
-            <tr>
-                <td> <embed src="/uploads/{{ admission.cin }}" width="500" height="375" type="application/pdf"></td>
-                <td>{{ form_row(form.cin ) }}</td>
-            </tr>
-            <tr>
-                <td>                <embed src="/uploads/{{ admission.bac }}" width="500" height="375" type="application/pdf">
-                </td>
-                <td>{{ form_row(form.bac ) }}</td>
-            </tr>
-            <tr>
-                <td>                <embed src="/uploads/{{ admission.attTravail }}" width="500" height="375" type="application/pdf">
-                </td>
-                <td>{{ form_row(form.attTravail ) }}</td>
-            </tr>
-            <tr>
-                <td>                <embed src="/uploads/{{ admission.attTitulaire }}" width="500" height="375" type="application/pdf">
-                </td>
-                <td>{{ form_row(form.att_titulaire ) }}</td>
-            </tr>
-            <tr>
-                <td>                <embed src="/uploads/{{ admission.autorisation }}" width="500" height="375" type="application/pdf">
-                </td>
-                <td>{{ form_row(form.autorisation ) }}</td>
-            </tr>
-            <tr>
-                <td>                <embed src="/uploads/{{ admission.cv }}" width="500" height="375" type="application/pdf">
-                </td>
-                <td>{{ form_row(form.cv ) }}</td>
-            </tr>
-            <tr>
-                <td>
+<div class="scrollable">
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th>Demande_insc</th>
+            <td>{{ admission.demandeInsc ? 'Yes' : 'No' }}</td>
+            <td> {{ form_row(form.demande_insc) }}</td>
+
+        </tr>
+        <tr>
+            <th>Cin</th>
+            <td>
+                <embed src="/uploads/{{ admission.cin }}" width="700" height="200" type="application/pdf">
+            </td>
+            <td> {{ form_row(form.cin) }}</td>
+
+        </tr>
+        <tr>
+            <th>Bac</th>
+            <td>
+                <embed src="/uploads/{{ admission.bac }}" width="700" height="200" type="application/pdf">
+            </td>
+            <td> {{ form_row(form.bac) }}</td>
+
+        </tr>
+        <tr>
+            <th>Att_travail</th>
+            <td>
+                <embed src="/uploads/{{ admission.attTravail }}" width="700" height="200" type="application/pdf">
+        <td> {{ form_row(form.attTravail) }}</td>
+
+        <tr>
+            <th>Att_titulaire</th>
+            <td><embed src="/uploads/{{ admission.attTitulaire }}" width="700" height="200" type="application/pdf">
+            </td>
+            <td> {{ form_row(form.att_titulaire) }}</td>
+
+        </tr>
+        <tr>
+            <th>Autorisation</th>
+            <td><embed src="/uploads/{{ admission.autorisation }}" width="700" height="200" type="application/pdf"></td>
+            <td> {{ form_row(form.autorisation) }}</td>
+
+        </tr>
+        <tr>
+            <th>Cv</th>
+            <td>
+                <embed src="/uploads/{{ admission.cv }}" width="700" height="200" type="application/pdf">
+            </td>
+            <td> {{ form_row(form.cv) }}</td>
+
+        </tr>
+        <tr>
+            <th>notes</th>
+            <td>
                 {% for note in admission.notes %}
-                    <embed src="/uploads/{{ note.name }}" width="500" height="375" type="application/pdf">
+                    <embed src="/uploads/{{ note.name }}" width="700" height="200" type="application/pdf">
                 {% endfor %}
-                </td>
-                <td>{{ form_row(form.notes ) }}</td>
+            </td>
+            <td> {{ form_row(form.notes) }}</td>
 
-            </tr>
-            <tr>
-                <td>
+        </tr>
+        <tr>
+            <th>Diplomes</th>
+            <td>
                 {% for note in admission.diplomes %}
-                   <embed src="/uploads/{{ note.name }}" width="500" height="375" type="application/pdf">
+                    <embed src="/uploads/{{ note.name }}" width="700" height="200" type="application/pdf">
                 {% endfor %}
-                </td>
-                <td>{{ form_row(form.diplomes ) }}</td>
+            </td>
+            <td> {{ form_row(form.diplomes) }}</td>
 
-            </tr>
-            <tr>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <div class="comment">
+        <td>{{ form_row(form.comment ) }}</td>
 
-
-            </tr>
-            </tbody>
-        </table>
-        <div class="comment">
-            <td>{{ form_row(form.comment ) }}</td>
-
-        </div>
     </div>
-    <br>
     <div>
-        {{ form_row(form.save ) }}
+        <div class="one_third">        {{ form_row(form.save ) }}
+        </div>
+        <div class="one_third">
+            <button onclick="location.href='{{ path("admission_accept", { 'id': admission.id }) }}'" type="button">
+                Accept
+            </button>
+        </div>
+
 
     </div>
     {{ form_end(form) }}
 
     <a href="{{ path('admission_to_accept') }}">back to list</a>
-
 
 {% endblock %}

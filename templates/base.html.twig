@@ -31,9 +31,12 @@ Licence URI: http://www.os-templates.com/template-terms
 <div class="wrapper row0">
     <div id="topbar" class="clear">
         <nav>
-            <ul>
-                <li><a href="{{ path('index') }}">Home</a></li>
-                <li><a href="{{ path('app_login') }}">Login</a></li>
+            <li><a href="{{ path('index') }}">Home</a></li>
+            <li><a href="{{ path('app_login') }}">Login</a></li>
+            {% if app.user %}
+                <li><a href="{{ path('app_logout') }}">Logout</a></li>
+                <li>{{ app.user.username }}</li>
+            {% endif %}
             </ul>
         </nav>
     </div>
@@ -52,15 +55,15 @@ Licence URI: http://www.os-templates.com/template-terms
             <ul class="clear">
                 <li class="active"><a href="{{ path('index') }}">Home</a></li>
                 <li><a href="{{ path("admission_index") }}">Admission</a></li>
-                    <ul>
-                        <li><a href="#">Level 2</a></li>
-                        <li><a class="drop" href="#">Level 2 + Drop</a>
-                            <ul>
-                                <li><a href="#">Level 3</a></li>
-                                <li><a href="#">Level 3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                <ul>
+                    <li><a href="#">Level 2</a></li>
+                    <li><a class="drop" href="#">Level 2 + Drop</a>
+                        <ul>
+                            <li><a href="#">Level 3</a></li>
+                            <li><a href="#">Level 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 </li>
                 <li><a href="{{ path("inscription_index") }}">My Inscription</a></li>
                 <li><a href="{{ path('inscription_new') }}">New Inscription</a></li>
@@ -68,7 +71,7 @@ Licence URI: http://www.os-templates.com/template-terms
                 <li><a class="drop" href="#">Staff</a>
                     <ul>
                         <li><a href="{{ path('admission_to_accept') }}">Admission</a></li>
-                      
+
                     </ul>
                 </li>
             </ul>
