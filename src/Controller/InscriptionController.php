@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Inscription;
 use App\Form\InscriptionType;
 use App\Repository\InscriptionRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +18,12 @@ class InscriptionController extends AbstractController
 {
     /**
      * @Route("/", name="inscription_index", methods={"GET"})
+     * @IsGranted("ROLE_CANDIDAT")
      */
     public function index(InscriptionRepository $inscriptionRepository): Response
     {
         return $this->render('inscription/index.html.twig', [
-            'inscriptions' => $inscriptionRepository->findAll(),
+            'inscriptions' => $inscriptionRepository->findBy(["user"=>$this->get('security.token_storage')->getToken()->getUser()]),
         ]);
     }
 

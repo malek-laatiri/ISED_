@@ -110,7 +110,7 @@ File: Layout CSS
 .sidebar .sdb_holder{margin-bottom:50px;}
 .sidebar .sdb_holder:last-child{margin-bottom:0;}
 
-.submit{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
+.btn{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
 /* Footer
 --------------------------------------------------------------------------------------------------------------- */
 #footer{padding:10px;}

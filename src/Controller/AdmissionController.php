@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Admission;
 use App\Form\Admission1Type;
 use App\Repository\AdmissionRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,16 +21,18 @@ class AdmissionController extends AbstractController
 {
     /**
      * @Route("/", name="admission_index", methods={"GET"})
+     * @IsGranted("ROLE_CANDIDAT")
      */
     public function index(AdmissionRepository $admissionRepository): Response
     {
         return $this->render('admission/index.html.twig', [
-            'admissions' => $admissionRepository->findAll(),
+            'admissions' => $admissionRepository->findBy(["user"=>$this->get('security.token_storage')->getToken()->getUser()]),
         ]);
     }
 
     /**
      * @Route("/admission_to_accept", name="admission_to_accept", methods={"GET"})
+     * @IsGranted("ROLE_SECRETAIRE")
      */
     public function toAccept(AdmissionRepository $admissionRepository): Response
     {
@@ -42,6 +45,7 @@ class AdmissionController extends AbstractController
 
     /**
      * @Route("/toaccept/{id}", name="admission_show_accept", methods={"GET"})
+     * @IsGranted("ROLE_SECRETAIRE")
      */
     public function showtoAccept(Admission $admission): Response
     {
@@ -79,6 +83,7 @@ class AdmissionController extends AbstractController
 
     /**
      * @Route("/new", name="admission_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_CANDIDAT")
      */
     public function new(Request $request): Response
     {

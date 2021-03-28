@@ -75,3 +75,15 @@ U
 %templates/admission/showAcc.html.twig,3/9/390610d7ce5215aa62affefc7ddfe01ef147a476
 V
 &src/Controller/AdmissionController.php,0/9/091f1733cfb9a0c2c3c5def2bb8e495524e32ba4
+U
+%public/layout/styles/fonts/index.html,9/7/97e00c11bd3f5c579edbd584262730eb02177677
+O
+templates/index/index.html.twig,b/c/bc7607e6cb028860e4076116cd20c5206e6afc3c
+R
+"src/Security/AuthAuthenticator.php,c/4/c4bc42ea0cf2b92a68853ab1b0144330caca1e3a
+R
+"src/Controller/IndexController.php,7/6/765f07569b12c5a4d3d76ada1c37e72e73106791
+U
+%src/Controller/SecurityController.php,7/c/7cc876ecdb4df676c79a6188e9f3ac45e5079434
+O
+public/layout/styles/layout.css,9/8/985c3ab25691527aa96dad68483abd39bc1a8b97
