@@ -1,5 +1,6 @@
 
-e	php:S1117h"IRename "$roles" which has the same name as the field declared at line 34.(‹÷¡×8ĞÒ¯Š…/
-Q	php:S1066ß"/Merge this if statement with the enclosing one.(‹Š²úÿÿÿÿ8ĞÒ¯Š…/
-;php:S125–"Remove this commented out code.(›—ÕÆ8ĞÒ¯Š…/
-	php:S1448"`Class "User" has 23 methods, which is greater than 20 authorized. Split it into smaller classes.(ÄÄÑ’ÿÿÿÿÿ8ĞÒ¯Š…/
+	php:S1448"`Class "User" has 26 methods, which is greater than 20 authorized. Split it into smaller classes.(ÄÄÑ’ÿÿÿÿÿ8ĞÒ¯Š…/
+;php:S125œ"Remove this commented out code.(›—ÕÆ8ĞÒ¯Š…/
+e	php:S1117n"IRename "$roles" which has the same name as the field declared at line 34.(‹÷¡×8ĞÒ¯Š…/
+Q	php:S1066å"/Merge this if statement with the enclosing one.(‹Š²úÿÿÿÿ8ĞÒ¯Š…/
+Q	php:S1066ˆ"/Merge this if statement with the enclosing one.(ºñºşÿÿÿÿ8İšˆ÷™/

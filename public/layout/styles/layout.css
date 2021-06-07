@@ -22,7 +22,9 @@ File: Layout CSS
 .row4, .row4 a{}
 .row5, .row5 a{}
 
-
+body{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
 #topbar{padding:10px 0 0 0; text-align:right; font-size:.8em;}
